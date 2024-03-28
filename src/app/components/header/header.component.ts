@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-header',
   standalone: true,
   imports: [],
-  template: `
-  <h2 class="bg-green-500">hello from Header</h2>
-  `,
+  template: ``,
   styles: ``
 })
 export class HeaderComponent {
