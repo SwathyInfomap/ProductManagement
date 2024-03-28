@@ -1,6 +1,15 @@
-@if(type==1){
-    <h2>Hello 1</h2>
-}
-@else{
-<h2>Hello 2</h2>
+@switch (type){
+    @case(1){
+        <h2>Hello 1</h2>
+    }
+    @case(2){
+        <h2>Hello2</h2>
+    }
+    @case(3){
+        <h2>Hello3</h2>
+    }
+    @default{
+        <h2>Hello default</h2>
+    }
+    
 }
