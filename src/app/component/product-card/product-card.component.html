@@ -1,17 +1,20 @@
-<mat-card>
-    <img mat-card-image 
-    class="!h-50"
-    [src]="product.image">
-    <div class="p-4">
-        <h3>{{product.name}}</h3>
-        <h4>{{product.brand}}</h4>
-        <div class="flex gap-2">
-            <span>{{product.currentPrice}}</span>
-            <span><s>{{product.standardPrice}}</s></span>
-            <span>{{product.discount}}</span>
+<div class="flex justify-center">
+    <mat-card class="shadow w-6/12">
+        <img mat-card-image 
+        class="!h-50"
+        [src]="product.image">
+        <div class="p-4">
+            <h3>{{product.name}}</h3>
+            <h4>{{product.brand}}</h4>
+            <div class="flex gap-2">
+                <span>{{product.currentPrice}}</span>
+                <span><s>{{product.standardPrice}}</s></span>
+                <span>{{product.discount}}</span>
+            </div>
+            <div class="flex justify-center">
+                <button mat-raised-button color="primary" (click)="view()">View</button>
+            </div>
         </div>
-        <div class="flex justify-center">
-            <button mat-raised-button color="primary" (click)="view()">View</button>
-        </div>
-    </div>
-</mat-card>
+    </mat-card>
+    
+</div>

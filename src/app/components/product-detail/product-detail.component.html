@@ -1,1 +1,17 @@
-<p>product-detail works!</p>
+<div class="flex justify-center">
+    <mat-card class="flex justify-center">
+        <img mat-card-image 
+        style="width:fit-content;"        [src]="product.image">
+        <div class="p-4">
+            <h3>{{product.name}}</h3>
+            <h4>{{product.brand}}</h4>
+            <p style="width: fit-content;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum enim perferendis magnam! Quos accusamus voluptate facilis tenetur doloremque aliquam reprehenderit at quaerat voluptates qui asperiores ratione, minima nulla repudiandae neque!</p>
+            <div class="flex gap-2">
+                <span>{{product.currentPrice}}</span>
+                <span><s>{{product.standardPrice}}</s></span>
+                <span>{{product.discount}}</span>
+            </div>
+        </div>
+    </mat-card>
+    
+</div>
