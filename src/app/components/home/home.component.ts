@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from '../../search/search.component';
 import { ProductService } from '../../product.service';
 import { Product } from '../../types/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,8 @@ export class HomeComponent {
   filteredProduct:Product[]=[];
   /**to inject a service within a component we follow the below syntax */
   productService=inject(ProductService);
+  router=inject(Router);
+
 
   ngOnInit(){
     /**here instead of data httpclient returns observables and observables needs to be subscribed to get the data*/
@@ -41,6 +44,7 @@ onSearch(search: string) {
 
   onViewProduct(event:any){
     console.log("onViewProduct",event);
+    this.router.navigateByUrl("/product/"+event)
   }
 
 

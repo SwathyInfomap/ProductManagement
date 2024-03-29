@@ -8,7 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [MatButtonModule, HomeComponent,HeaderComponent]
+    imports: [MatButtonModule, HomeComponent,HeaderComponent,RouterOutlet]
 })
 export class AppComponent {
   title="my product management";
