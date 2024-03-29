@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ProductCardComponent } from '../../component/product-card/product-card.component';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from '../../search/search.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductCardComponent,CommonModule],
+  imports: [ProductCardComponent,CommonModule,SearchComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
