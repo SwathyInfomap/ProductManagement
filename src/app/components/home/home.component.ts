@@ -11,6 +11,9 @@ import { SearchComponent } from '../../search/search.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+onSearch(search: string) {
+  console.log("home",search);
+}
   products = [{
     /**replaced with real data */
     "id": "1",
