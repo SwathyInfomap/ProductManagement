@@ -13,6 +13,11 @@ import { SearchComponent } from '../../search/search.component';
 export class HomeComponent {
 onSearch(search: string) {
   console.log("home",search);
+  if(search){
+    this.filteredProduct=this.products.filter(x=>x.name.toLowerCase().includes(search.toLowerCase()));
+  }else{
+    this.filteredProduct=this.products;
+  }
 }
   products = [{
     /**replaced with real data */
@@ -62,8 +67,14 @@ onSearch(search: string) {
     "name": "IRUSU VR 3D Glasses Headset For mobiles - Monster VR  (Smart Glasses, Black)"
   }
   ];
+  filteredProduct:any[]=[];
+  ngOnInit(){
+    this.filteredProduct=this.products;
+  }
 
   onViewProduct(event:any){
     console.log("onViewProduct",event);
   }
+
+
 }
