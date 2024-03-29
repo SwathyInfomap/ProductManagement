@@ -1,14 +1,14 @@
 <mat-card>
     <img mat-card-image 
     class="!h-50"
-    src="https://lp2.hm.com/hmgoepprod?set=source[/c5/91/c591837d970438111f709e8252828e56003c940d.jpg],origin[dam],category[kids_new_born_clothing_bodysuits_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]">
+    [src]="product.image">
     <div class="p-4">
-        <h1>Product Name/Title</h1>
-        <h2>Brand</h2>
+        <h3>{{product.name}}</h3>
+        <h4>{{product.brand}}</h4>
         <div class="flex gap-2">
-            <span>Rs. 1000</span>
-            <span><s>Rs. 2000</s></span>
-            <span>(50%) OFF</span>
+            <span>{{product.currentPrice}}</span>
+            <span><s>{{product.standardPrice}}</s></span>
+            <span>{{product.discount}}</span>
         </div>
     </div>
 </mat-card>
