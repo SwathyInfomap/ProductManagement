@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { Product } from '../../types/product';
 import { ProductService } from '../../product.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product-detail',
   standalone: true,
@@ -14,7 +15,12 @@ import { ProductService } from '../../product.service';
 export class ProductDetailComponent {
   product!:Product;
   productService=inject(ProductService);
+  
+  activatedRoute=inject(ActivatedRoute);
   ngOnInit(){
+    /**to get the id of each product */
+    console.log(this.activatedRoute.snapshot.params["id"]);
+
     let productId=1;
     this.productService.getProductById(productId).subscribe(result=>{
       this.product=result;
