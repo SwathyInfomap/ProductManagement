@@ -3,6 +3,7 @@ import { ProductCardComponent } from '../../component/product-card/product-card.
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from '../../search/search.component';
 import { ProductService } from '../../product.service';
+import { Product } from '../../types/product';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,20 @@ import { ProductService } from '../../product.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  products:any[]=[];
-  filteredProduct:any[]=[];
+  products:Product[]=[]
+  filteredProduct:Product[]=[];
   /**to inject a service within a component we follow the below syntax */
   productService=inject(ProductService);
+
+  ngOnInit(){
+    /**here instead of data httpclient returns observables and observables needs to be subscribed to get the data*/
+    this.productService.getProducts().subscribe((result)=>{
+      console.log(result);
+      this.products=result;
+      this.filteredProduct=this.products;
+    })
+    
+  }
 
 onSearch(search: string) {
   console.log("home",search);
@@ -26,10 +37,7 @@ onSearch(search: string) {
   }
 }
  
-  ngOnInit(){
-    this.products=this.productService.products;
-    this.filteredProduct=this.products;
-  }
+  
 
   onViewProduct(event:any){
     console.log("onViewProduct",event);
