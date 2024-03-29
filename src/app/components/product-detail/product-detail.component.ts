@@ -18,10 +18,7 @@ export class ProductDetailComponent {
   
   activatedRoute=inject(ActivatedRoute);
   ngOnInit(){
-    /**to get the id of each product */
-    console.log(this.activatedRoute.snapshot.params["id"]);
-
-    let productId=1;
+         let productId = this.activatedRoute.snapshot.params["id"];
     this.productService.getProductById(productId).subscribe(result=>{
       this.product=result;
     })
