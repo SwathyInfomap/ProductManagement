@@ -58,4 +58,8 @@ export class HomeComponent {
     "name": "IRUSU VR 3D Glasses Headset For mobiles - Monster VR  (Smart Glasses, Black)"
   }
   ];
+
+  onViewProduct(event:any){
+    console.log("onViewProduct",event);
+  }
 }
